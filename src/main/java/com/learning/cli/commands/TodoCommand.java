@@ -1,6 +1,8 @@
 package com.learning.cli.commands;
 
 import com.learning.cli.commands.subcommands.AddTodoCommand;
+import com.learning.cli.commands.subcommands.ListTodoCommand;
+import com.learning.cli.commands.subcommands.ReturnCode;
 import picocli.CommandLine;
 
 import java.util.concurrent.Callable;
@@ -11,24 +13,22 @@ import java.util.concurrent.Callable;
     mixinStandardHelpOptions = true,
     requiredOptionMarker = '*',
     description = "%nThis is a todo Tool which will help us to manage todo activities",
-    header = "Todo CLI",
+    header = "%n>>>>>>>>>>>> Todo CLI",
     footerHeading = "%nCopyright",
     footer = "%nDeveloped by IsmSkism",
     optionListHeading = "%nOptions are: %n",
     subcommandsRepeatable = true,
     commandListHeading = "%nSubcommands are: %n",
     subcommands = {
-        AddTodoCommand.class
+        AddTodoCommand.class,
+        ListTodoCommand.class
     }
 )
 public class TodoCommand implements Callable<Integer> {
 
-  final Integer SUCCESS = 0;
-  final Integer FAILURE = 1;
-
   @Override
-  public Integer call() throws Exception {
+  public Integer call() {
     System.out.println("[todo] Welcome to Todo");
-    return SUCCESS;
+    return ReturnCode.SUCCESS.getCode();
   }
 }
