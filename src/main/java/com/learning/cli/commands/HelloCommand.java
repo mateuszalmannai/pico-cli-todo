@@ -22,7 +22,11 @@ public class HelloCommand implements Runnable{
 //  @Option(names = {"-h", "--help"}, usageHelp = true)
 //  boolean help;
 
-  @Option(names = {"-u", "--user"}, required = false, description = "Provide User Name", paramLabel = "<user name>")
+  @Option(
+      names = {"-u", "--user"},
+      required = false,
+      description = "Provide User Name",
+      paramLabel = "<user name>")
   String user;
 
   @Override
