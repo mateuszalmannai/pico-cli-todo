@@ -53,7 +53,7 @@ public class AddTodoCommand implements Callable<Integer> {
       });
     } else {
       Arrays.asList(messages).forEach(todoMessage -> {
-        Todo todo = this.todoService.createTodo(todoMessage, dateCreated);
+        Todo todo = this.todoService.createTodo(todoMessage, new Date());
         System.out.println("todo = " + todo);
       });
     }

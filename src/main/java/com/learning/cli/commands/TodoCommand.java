@@ -1,9 +1,6 @@
 package com.learning.cli.commands;
 
-import com.learning.cli.commands.subcommands.AddTodoCommand;
-import com.learning.cli.commands.subcommands.ListTodoCommand;
-import com.learning.cli.commands.subcommands.ModifyTodoCommand;
-import com.learning.cli.commands.subcommands.ReturnCode;
+import com.learning.cli.commands.subcommands.*;
 import picocli.CommandLine;
 
 import java.util.concurrent.Callable;
@@ -23,7 +20,10 @@ import java.util.concurrent.Callable;
     subcommands = {
         AddTodoCommand.class,
         ListTodoCommand.class,
-        ModifyTodoCommand.class
+        ModifyTodoCommand.class,
+        DeleteTodoCommand.class,
+        CompleteTodoCommand.class,
+        StartTodoCommand.class
     }
 )
 public class TodoCommand implements Callable<Integer> {

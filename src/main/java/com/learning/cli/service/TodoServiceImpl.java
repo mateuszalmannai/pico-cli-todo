@@ -17,7 +17,7 @@ public class TodoServiceImpl implements TodoService{
   public static final String TODO = "todo";
   DB db = null;
   ConcurrentMap<Long, Todo> map = null;
-  Comparator<Todo> todoComparator = (o1, o2) -> o1.getCreatedOn().compareTo(o2.getCreatedOn());
+  Comparator<Todo> todoComparator = Comparator.comparing(Todo::getId);
 
   private void start() {
     this.db = DBMaker.fileDB(TODO_MAP_DB).make();
