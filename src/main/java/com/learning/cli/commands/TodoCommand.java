@@ -2,6 +2,7 @@ package com.learning.cli.commands;
 
 import com.learning.cli.commands.subcommands.AddTodoCommand;
 import com.learning.cli.commands.subcommands.ListTodoCommand;
+import com.learning.cli.commands.subcommands.ModifyTodoCommand;
 import com.learning.cli.commands.subcommands.ReturnCode;
 import picocli.CommandLine;
 
@@ -21,7 +22,8 @@ import java.util.concurrent.Callable;
     commandListHeading = "%nSubcommands are: %n",
     subcommands = {
         AddTodoCommand.class,
-        ListTodoCommand.class
+        ListTodoCommand.class,
+        ModifyTodoCommand.class
     }
 )
 public class TodoCommand implements Callable<Integer> {
